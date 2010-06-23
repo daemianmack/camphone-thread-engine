@@ -32,15 +32,15 @@ This script will accept two flavors of email:
         Subj: N/A
         Body: [PASSWORD] qq[SOME TEXT]qq
 
-    If this script does not find a subject starting with 'reg', and instead finds an image attached, it will parse the email body for a password, the identifying string, and optionally a caption bookended in double Qs.
+    If this script does not find a subject starting with 'reg', and instead finds an image attached, it will parse the email for a password, the identifying string, and optionally a caption bookended in double Qs.
 
-    That is, the first word in the body of the email must be the password stored for the user via their registration email. Optionally, they can add a text caption to the photo that will be added to the forum post. I've chosen 'qq' as a sentinel since it's a rare sequence. This way we clearly delineate password from caption and other text, which carriers will tack on without regard for our sanity. Users whose emails must contain disclaimers and such can also use the optional 'qq' sentinel at the end of their caption, to bookend it.
+    That is, the first word in the body of the email must be the password stored previously for the user via their registration email. Optionally, they can add a text caption to the photo that will be added to the forum post. I've chosen 'qq' as a sentinel since it's a rare sequence. This way we clearly delineate password from caption and other text, which carriers will tack on without regard for our sanity. Users whose emails must contain disclaimers and such can use the optional 'qq' sentinel at the *end* of their caption as well, to bookend it.
 
 
 
 ### Also
 
-I'm including two sample mailfiles, one for each flavor of email. You can use these to test your own setup, format changes, etc.
+Enclosed please find two sample mailfiles, one for each flavor of email. You can use these to test your own setup, format changes, etc.
 
 Note that you'll need Github's version of MMS2R...
 
