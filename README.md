@@ -16,20 +16,25 @@ Mail comes in via fetchmail/procmail or whatever your favorite mail-handling sys
 This script will accept two flavors of email:
 --------------------------------------------
 
-1. **Registration** email. If this script finds a subject starting with the string 'reg', it will create an entry in a DB table ('camphone_user') using the first word of the email body as the username and the second word as the password. It will also use the sender address as an identifier. (Depending on carrier, this may be the phone number, or it may be the human-friendly From: field of the sending email client. In either case, it serves to distinguish the sending device.)
+1. **Registration** email. 
+
+        Subj: register
+        Body: [USERNAME] [PASSWORD]
+
+    If this script finds a subject starting with the string 'reg', it will create an entry in a DB table ('camphone_user') using the first word of the email body as the username and the second word as the password. It will also use the sender address as an identifier. (Depending on carrier, this may be the phone number, or it may be the human-friendly From: field of the sending email client. In either case, it serves to distinguish the sending device.)
 
     After registering a user, the script will reply to their email address with a confirmation.
 
-       Subj: register
-       Body: [USERNAME] [PASSWORD]
 
 
-2. **Camphone** email. If this script does not find a subject starting with 'reg', and instead finds an image attached, it will parse the email body for a password, the identifying string, and optionally a caption bookended in double Qs.
+2. **Camphone** email. 
 
-       Subj: N/A
-       Body: [PASSWORD] qq[SOME TEXT]qq
+        Subj: N/A
+        Body: [PASSWORD] qq[SOME TEXT]qq
 
-That is, the first word in the body of the email must be the password stored for the user via their registration email. Optionally, they can add a text caption to the photo that will be added to the forum post. I've chosen 'qq' as a sentinel since it's a rare sequence. This way we clearly delineate password from caption and other text, which carriers will tack on without regard for our sanity. Users whose emails must contain disclaimers and such can also use the optional 'qq' sentinel at the end of their caption, to bookend it.
+    If this script does not find a subject starting with 'reg', and instead finds an image attached, it will parse the email body for a password, the identifying string, and optionally a caption bookended in double Qs.
+
+    That is, the first word in the body of the email must be the password stored for the user via their registration email. Optionally, they can add a text caption to the photo that will be added to the forum post. I've chosen 'qq' as a sentinel since it's a rare sequence. This way we clearly delineate password from caption and other text, which carriers will tack on without regard for our sanity. Users whose emails must contain disclaimers and such can also use the optional 'qq' sentinel at the end of their caption, to bookend it.
 
 
 
