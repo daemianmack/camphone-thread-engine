@@ -25,7 +25,6 @@ require 'mechanize'
                        :reply_from     => "camphone_bot@example.com"
                        )
 
-@dbh = Mysql.real_connect(@opts.dbhost, @opts.dbuser, @opts.dbpass, @opts.db)
 
 
 
@@ -150,6 +149,7 @@ log "----------------"
 log "Received email from #{email.from}."
 mms = MMS2R::Media.new(email)
 
+@dbh = Mysql.real_connect(@opts.dbhost, @opts.dbuser, @opts.dbpass, @opts.db)
 
 # Main. Are we dealing with a registration, or a picture mail?
 if email.subject.strip =~ /^reg/i
