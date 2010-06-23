@@ -1,0 +1,10 @@
+set daemon 60
+set no syslog
+
+defaults proto imap norewrite
+options mda "/home/daemian/bin/engine.rb"
+
+  poll imap.gmail.com
+  user "cam@example.com"
+  password "xyzzy"
+  ssl
