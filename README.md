@@ -61,3 +61,6 @@ MySQL schema of camphone_users...
 
 
 This is all possible thanks to the wondrous MMS2R gem made available by Mike Mondragon, which must represent hours of patience sorting through the aberrant things providers do with, to, and alongside the MMS messages you send through their systems. Startling but true footnote follows: A canadian colleague of mine is on Sasktel. Every single one of his MMSs come through with a little surprise gift from his carrier: the entire contents of an XHTML Basic 1.0 DTD as an inline attachment to his message. It's 1500 lines long and takes up 63k. (I can't figure out whether this would be more preposterous if he were paying by the kilobyte, or on a free data plan.)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/daemianmack/camphone-thread-engine/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
